@@ -1,16 +1,22 @@
 <script>
+    import sanket from '$lib/assets/sanket.jpg';
+    import youif from '$lib/assets/youif.png';
+    import me from '$lib/assets/me.jpg';
+    import yayyyu from '$lib/assets/yayyyu.png';
+    import prom from '$lib/assets/prom.mp4';
+
     let prompts = [{
-        image: "sanket.jpg",
+        image: sanket,
         prompt: "is this sruthi manikonda from bits pilani?"
     }, {
-        image: "youif.png",
+        image: youif,
         prompt: "Will you come to the dark side (of library lawns) with me?"
     }, {
-        image: "me.jpg",
+        image: me,
         prompt: "One does not simply say no to going to prom with me"
     },
     {
-        image: "yayyyu.png",
+        image: yayyyu,
         prompt: "sweet, I'm taking you to the prom"
     }]
 
@@ -21,7 +27,7 @@
 <div class="card">
     {#if !allCardsShown}
         <!-- svelte-ignore a11y-missing-attribute -->
-        <img src="src/lib/assets/{prompts[currentCard]["image"]}" width="90px" height="90px"/>
+        <img src={prompts[currentCard]["image"]} width="90px" height="90px"/>
         <h1>{prompts[currentCard]["prompt"].toLowerCase().replaceAll("a","ƒ")}</h1>
 
         <div class="btns">
@@ -34,7 +40,7 @@
     {:else}
         <!-- svelte-ignore a11y-media-has-caption -->
         <video width="320" height="240" controls>
-            <source src="src/lib/assets/prom.mp4" type="video/mp4">
+            <source src={prom} type="video/mp4">
         </video>
         <span><br>ƒt 9 o'clock we'll be engƒging in plƒtonic hƒlƒl christiƒn ƒctivities</span>
     {/if}
@@ -44,7 +50,7 @@
 
     @font-face{
         font-family: "Minecraft";
-        src: url("src/lib/assets/MinecraftTen.ttf") format("truetype");
+        src: url("$lib/assets/MinecraftTen.ttf") format("truetype");
     }
 
     h1 {
@@ -61,7 +67,7 @@
 
     .card {
         font-family: 'Minecraft';
-        background-image: url("src/lib/assets/mc.jpg");
+        background-image: url("$lib/assets/mc.jpg");
         /* background-position: right; */
         position: relative;
         width: 300px;

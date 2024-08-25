@@ -3,6 +3,8 @@
     import Card from "../lib/comp/card.svelte"
     import { onMount } from 'svelte'
 
+    import bg from '$lib/assets/bg.png';
+
     let showText = true
     let blurBackground = true
 
@@ -18,7 +20,7 @@
     <source src="src/lib/assets/nyan.mp3" type="audio/mpeg">
 </audio> -->
 
-<img src="src/lib/assets/bg.png" class="bg">
+<img src={bg} class="bg">
 
 <div class="container">
     {#if showText}
